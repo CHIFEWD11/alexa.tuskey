@@ -146,7 +146,11 @@ function showCurrentQuestion() {
   var surveyObject = surveyObjects[currentIndex];
   var surveyQuestion = surveyObject.question;
   var answers = surveyObject.answers;
-  $('.question').html(surveyQuestion);
+  $('.question').fadeOut(100, function(){
+      $('.question').html(surveyQuestion);
+      $('.question').fadeIn(100);
+    });
+ 
   colors.map(function(color,index){
     $('#' + color).html(answers[index]);
   });
@@ -162,7 +166,7 @@ function answerQuestion() {
   incrementIndex();
   updateColor();
   showCurrentQuestion();
-  fadeIn();
+  //fadeIn();
   updateResult();
 }
 
@@ -265,10 +269,10 @@ function showResultsPage() {
   }
 }
 
-function fadeIn() {
-  $('.question').toggleClass('animated fadeIn');
-  $('.answer-list').toggleClass('animated fadeIn');
-}
+//function fadeIn() {
+  //$('.question').toggleClass('animated fadeIn');
+  //$('.answer-list').toggleClass('animated fadeIn');
+//}
 
 
 $('.js-splash-btn').on('click', startQuiz);

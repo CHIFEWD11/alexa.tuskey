@@ -103,11 +103,6 @@ p {
 }
 
 
-#resultImage {
-    width: 100%;
-  }
-
-
 #purple:hover {
     background-color: #7B318C;
     transition: background-color 0.13s ease-in;
