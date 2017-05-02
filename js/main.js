@@ -150,9 +150,12 @@ function showCurrentQuestion() {
       $('.question').html(surveyQuestion);
       $('.question').fadeIn(100);
     });
- 
+
+  $('.answer-list').fadeOut(100, function() {   
   colors.map(function(color,index){
     $('#' + color).html(answers[index]);
+    });
+    $('.answer-list').fadeIn(100);
   });
 }
 
@@ -166,7 +169,6 @@ function answerQuestion() {
   incrementIndex();
   updateColor();
   showCurrentQuestion();
-  //fadeIn();
   updateResult();
 }
 
@@ -268,11 +270,6 @@ function showResultsPage() {
     $('body').css('background-color', '#ADCE63');    
   }
 }
-
-//function fadeIn() {
-  //$('.question').toggleClass('animated fadeIn');
-  //$('.answer-list').toggleClass('animated fadeIn');
-//}
 
 
 $('.js-splash-btn').on('click', startQuiz);
